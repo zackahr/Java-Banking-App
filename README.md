@@ -3,8 +3,8 @@
 Java-Banking-App is a backend service responsible for managing bank accounts, providing functionalities such as creating, retrieving, updating, and deleting accounts, as well as depositing and withdrawing funds.
 
 ## Technologies Used
-- **Spring Boot ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.5.0-green):** Used for dependency injection and configuration.
-- **MariaDB ![MariaDB](https://img.shields.io/badge/MariaDB-10.5-blue):** Utilized as the database backend for persistence.
+- ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.5.0-green): Used for dependency injection and configuration.
+- ![MariaDB](https://img.shields.io/badge/MariaDB-10.5-blue): Utilized as the database backend for persistence.
 
 ## Features
 - **Account Creation:** Allows users to create new bank accounts.
