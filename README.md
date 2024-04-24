@@ -3,8 +3,8 @@
 Java-Banking-App is a backend service responsible for managing bank accounts, providing functionalities such as creating, retrieving, updating, and deleting accounts, as well as depositing and withdrawing funds.
 
 ## Technologies Used
-- ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.5.0-green): Used for dependency injection and configuration.
-- ![MariaDB](https://img.shields.io/badge/MariaDB-10.5-blue): Utilized as the database backend for persistence.
+- **Spring Boot:** Used for dependency injection and configuration.
+- **MariaDB:** Utilized as the database backend for persistence.
 
 ## Features
 - **Account Creation:** Allows users to create new bank accounts.
@@ -28,6 +28,16 @@ To run the Java-Banking-App locally, follow these steps:
    
 3. **Configure MariaDB:**
    Install MariaDB and ensure it's running locally.
+   Login to Mariadb using the command:
+   ```bash
+      mariadb -u root -p
+   ```
+   Enter your password when prompted.
+   Once logged in, create the `banking_app` database by running:
+   ```bash
+      CREATE DATABASE banking_app;
+   ```
+4.Update Database Configuration:
    Update the application.properties file with your MariaDB connection     
    details:
    ```bash
@@ -39,9 +49,12 @@ To run the Java-Banking-App locally, follow these steps:
    spring.jpa.database-platform=org.hibernate.dialect.MariaDBDialect
    ```
    
-4. **Build and run the application:**
+5. **Build and run the application:**
    ```bash
    ./mvnw spring-boot:run
    ```
-5. **Access the application:**
+6. **Access the application:**
    The application will be running at http://localhost:8080.
+   ```bash 
+   These steps include instructions for creating the `banking_app` database     using MariaDB command line interface on Linux.
+   ```
