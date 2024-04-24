@@ -37,7 +37,7 @@ To run the Java-Banking-App locally, follow these steps:
    ```bash
       CREATE DATABASE banking_app;
    ```
-4.Update Database Configuration:
+4. **Update Database Configuration:**
    Update the application.properties file with your MariaDB connection     
    details:
    ```bash
@@ -55,6 +55,4 @@ To run the Java-Banking-App locally, follow these steps:
    ```
 6. **Access the application:**
    The application will be running at http://localhost:8080.
-   ```bash 
    These steps include instructions for creating the `banking_app` database     using MariaDB command line interface on Linux.
-   ```
