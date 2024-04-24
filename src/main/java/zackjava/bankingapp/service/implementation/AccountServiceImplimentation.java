@@ -7,6 +7,9 @@ import zackjava.bankingapp.entity.mapper.AccountMapper;
 import zackjava.bankingapp.repository.AccountRepository;
 import zackjava.bankingapp.service.AccountService;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class AccountServiceImplimentation implements AccountService {
 
@@ -41,6 +44,39 @@ public class AccountServiceImplimentation implements AccountService {
         account.setBalance(total);
         Account savedAccount = accountRepository.save(account);
         return AccountMapper.mapToAccountDto(savedAccount);
+    }
+
+    @Override
+    public AccountDto withdraw(Long id, double amount) {
+        Account account = accountRepository.
+                findById(id)
+                .orElseThrow(() -> new RuntimeException("Account does not exists"));
+
+        if (account.getBalance() < amount){
+            throw new RuntimeException("Insufficient amount");
+        }
+
+        double total = account.getBalance() - amount;
+        account.setBalance(total);
+        Account savedAccount = accountRepository.save(account);
+
+        return AccountMapper.mapToAccountDto(savedAccount);
+    }
+
+    @Override
+    public List<AccountDto> getAllAccounts() {
+        List<Account> accounts = accountRepository.findAll();
+        return accounts.stream().map((account) -> AccountMapper.mapToAccountDto(account)).
+                collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteAccount(Long id) {
+        Account account = accountRepository.
+                findById(id)
+                .orElseThrow(() -> new RuntimeException("Account does not exists"));
+
+        accountRepository.deleteById(id);
     }
 
 }
